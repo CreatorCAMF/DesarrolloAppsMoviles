@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DataStorage</string>
+    <string name="checkSpace">Check free space</string>
+    <string name="Guardar">Guardar en archivo</string>
+    <string name="Next">Siguiente</string>
+    <string name="GetFiles">Ver archivos</string>
+    <string name="ReadFile">Leer Archivo</string>
+    <string name="DeleteFile">Borrar Archivo</string>
+</resources>

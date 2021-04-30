@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/action_bar"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_favorite2"
+        android:icon="@drawable/action_bar_3"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_favorite3"
+        android:icon="@drawable/action_bar_3"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/insert"
+        android:title="Opcion1"
+        app:showAsAction="never"/>
+    <item android:id="@+id/select"
+        android:title="Opcion2"
+        app:showAsAction="never"/>
+    <item android:id="@+id/delet"
+        android:title="Opcion3"
+        app:showAsAction="never"/>
+</menu>

@@ -46,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveKeyValue(String clave, String valor){
-
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(clave,valor);
         editor.commit();
     }
+
+
 }

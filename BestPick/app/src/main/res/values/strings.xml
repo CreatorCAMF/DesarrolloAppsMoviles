@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BestPick</string>
+    <string name="FB">Facebook</string>
+    <string name="Google">Google</string>
+    <string name="Login">Iniciar sesión</string>
+    <string name="CreateAccount">Crear Cuenta</string>
+    <string name="User">Usuario:</string>
+    <string name="Password">Contraseña:</string>
+    <string name="Mail">Correo:</string>
+    <string name="Phone">Teléfono:</string>
+    <string name="Genre">Genero:</string>
+    <string name="DateOfBith">Fecha de nacimiento:</string>
+    <string name="GenreMale">M</string>
+    <string name="GenreFemale">F</string>
+    <string name="GenreOther">Otro</string>
+</resources>

@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sentPost();
     }
 
     public void sendRequest(View view) {
@@ -58,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void sentPost(View view){
-        final TextView textView = (TextView) findViewById(R.id.txtResponse);
+    public void sentPost(){
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://android-service-urhxsjsspa-uc.a.run.app/cars";
+        Log.println(Log.ASSERT,"OK","Campo: hola");
         StringRequest sr = new StringRequest(Request.Method.POST,url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textView.setText("That didn't work!");
+                Log.println(Log.ASSERT,"OK","That didn't work!");
             }
         }){
             @Override

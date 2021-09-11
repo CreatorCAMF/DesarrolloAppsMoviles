@@ -6,4 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".crearArchivo">
 
+    <Button
+        android:id="@+id/btnGuardarArchivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="GuardarArchivo"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="@+id/etDataArchivo"
+        app:layout_constraintStart_toStartOf="@+id/etDataArchivo"
+        app:layout_constraintTop_toBottomOf="@+id/etDataArchivo" />
+
+    <EditText
+        android:id="@+id/etNombreArchivo"
+        android:layout_width="208dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etDataArchivo"
+        android:layout_width="326dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreArchivo" />
+
+    <Button
+        android:id="@+id/btnMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:onClick="GoToAdministrador"
+        android:text="@string/more"
+        app:layout_constraintEnd_toEndOf="@+id/btnGuardarArchivo"
+        app:layout_constraintStart_toStartOf="@+id/btnGuardarArchivo"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarArchivo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

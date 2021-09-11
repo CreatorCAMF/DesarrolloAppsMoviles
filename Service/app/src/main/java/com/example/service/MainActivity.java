@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CANAL_MIO")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("Cornamusa")
+                .setContentTitle(getText(R.string.app_name))
                 .setContentText("Notificando ando")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)

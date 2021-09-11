@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".administradorArchivos">
 
+    <Button
+        android:id="@+id/btnGetDataFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="LeerArchivo"
+        android:text="@string/get"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetFiles" />
+
+    <Button
+        android:id="@+id/btnGetFiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:onClick="ls"
+        android:text="@string/archivos"
+        app:layout_constraintEnd_toEndOf="@+id/tvShowData"
+        app:layout_constraintStart_toStartOf="@+id/tvShowData"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowData" />
+
+    <Button
+        android:id="@+id/btnDeleteFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="Borrar"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetDataFile" />
+
+    <TextView
+        android:id="@+id/tvShowData"
+        android:layout_width="380dp"
+        android:layout_height="223dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etDeleteFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteFile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">HolaMundo</string>
+    <string name="solve">Calcular</string>
+    <string name="send">Enviar</string>
+    <string name="save">Guardar</string>
+    <string name="update">Actualizar</string>
+    <string name="get">Obtener</string>
+    <string name="delete">Borrar</string>
+    <string name="claveValor">Clave Valor</string>
+    <string name="archivos">Archivos</string>
+    <string name="more">Más</string>
+    <string name="db">DB</string>
+    <string name="value">Escribe un numero</string>
 </resources>

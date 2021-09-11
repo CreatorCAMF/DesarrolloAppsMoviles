@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "35822381746",
+    "firebase_url": "https://ndandroid-332aa.firebaseio.com",
+    "project_id": "ndandroid-332aa",
+    "storage_bucket": "ndandroid-332aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35822381746:android:168fbdda1a17f72953f7ab",
+        "android_client_info": {
+          "package_name": "com.example.myfirstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35822381746-sugs8l9cpet9s0gpaatad9pe783khl33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhJTq6Lu4ItUnD96eTHGmTytXaDLON9Mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35822381746-sugs8l9cpet9s0gpaatad9pe783khl33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

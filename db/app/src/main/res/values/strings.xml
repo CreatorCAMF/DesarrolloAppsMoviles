@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">db</string>
+    <string name="name">Nombre</string>
+    <string name="mat">Matricula</string>
+    <string name="anime">Anime Favorito</string>
+    <string name="edad">Edad</string>
+    <string name="carrera">Carrera</string>
+</resources>

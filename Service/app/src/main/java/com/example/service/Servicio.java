@@ -20,6 +20,8 @@ import androidx.core.app.NotificationCompat;
 public class Servicio extends Service {
     private Looper serviceLooper;
     private ServiceHandler serviceHandler;
+
+
     private Context context;
     private String TIEMPO;
 
@@ -112,8 +114,6 @@ public class Servicio extends Service {
     public void notificacionBarraProgreso()
     {
         try {
-
-
             int MAX = Integer.parseInt(TIEMPO);
             int MIN = 0;
 
@@ -138,7 +138,7 @@ public class Servicio extends Service {
             builder.setProgress(0, 0, false);
             noticia = builder.setContentText("Pomodoro completado").build();
             startForeground(100,noticia);
-
+            Thread.sleep(1000);
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

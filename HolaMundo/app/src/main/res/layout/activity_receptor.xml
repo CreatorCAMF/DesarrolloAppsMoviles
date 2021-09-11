@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Receptor">
 
+    <TextView
+        android:id="@+id/tvCatcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnExternalApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="sendExternalApp"
+        android:text="@string/send"
+        app:layout_constraintEnd_toEndOf="@+id/tvCatcher"
+        app:layout_constraintStart_toStartOf="@+id/tvCatcher"
+        app:layout_constraintTop_toBottomOf="@+id/tvCatcher" />
 </androidx.constraintlayout.widget.ConstraintLayout>

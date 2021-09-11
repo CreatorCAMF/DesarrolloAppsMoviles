@@ -147,5 +147,5 @@ public class InsertCarrera extends AppCompatActivity {
             Log.println(Log.ASSERT, "MESSAGE", "Error clases de alumnno: " +e.getMessage());
         }
 
+        }
     }
-}

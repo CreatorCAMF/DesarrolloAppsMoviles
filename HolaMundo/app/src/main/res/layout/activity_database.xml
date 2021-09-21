@@ -84,7 +84,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etGenero" />
 
-    <EditText
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rv"
+        android:layout_width="350dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="30dp"
+        android:scrollbar="vertical"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDelete"
+    />
+
+
+    <!--<EditText
         android:id="@+id/etResult"
         android:layout_width="350dp"
         android:layout_height="215dp"
@@ -94,5 +112,9 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDelete" />-->
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

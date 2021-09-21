@@ -119,3 +119,59 @@ public class database extends AppCompatActivity {
 
     }
 }
+
+
+class animeAdapter extends RecyclerView.Adapter<animeAdapter.animeViewHolder>{
+    public static List<Anime> ANIMES;
+
+    public animeAdapter(List<Anime> animes){
+        ANIMES = animes;
+    }
+
+    public static class animeViewHolder extends RecyclerView.ViewHolder {
+        public TextView itemtvNombreAnime;
+        public TextView itemtvGeneroAnime;
+        public TextView itemtvAutorAnime;
+
+        public animeViewHolder(View v){
+            super(v);
+            itemtvNombreAnime = (TextView)v.findViewById(R.id.itemtvNombreAnime); 
+            itemtvGeneroAnime = (TextView)v.findViewById(R.id.itemtvGeneroAnime); 
+            itemtvAutorAnime = (TextView)v.findViewById(R.id.itemtvAutorAnime); 
+        }
+    }
+
+    @Override
+    public animeAdapter.animeViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View item_anime = (View)LayoutInflater.from(parent.getContext()).inflate(R.layout.id.item_anime,parent,false);
+        animeViewHolder vh = new animeViewHolder(item_anime);
+        return vh;
+    }
+
+    @Override
+    public void onBindViewHolder(final animeViewHolder holder, int position)
+    {
+        final Anime animeItem = ANIMES.get(position);
+
+        holder.itemtvNombreAnime.setText(animeItem.nombreAnime);
+
+        holder.itemtvGeneroAnime.setText(animeItem.genero);
+
+        holder.itemtvAutorAnime.setText(animeItem.autor);
+
+        holder.itemtvNombreAnime.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view){
+                Log.println(Log.ASSERT,"Element Click", "Has seleccionado la serie: "+animeItem.nombreAnime)
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount()
+    {
+        return ANIMES.size();
+    }
+
+}

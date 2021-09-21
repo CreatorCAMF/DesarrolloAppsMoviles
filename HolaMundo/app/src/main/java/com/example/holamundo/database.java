@@ -1,6 +1,8 @@
 package com.example.holamundo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
@@ -10,6 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import android.widget.TextView;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.ArrayList;
@@ -18,6 +24,10 @@ import java.util.List;
 public class database extends AppCompatActivity {
 
     public DB db;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter myAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,24 +67,27 @@ public class database extends AppCompatActivity {
 
     public void SelectAnime(View view)
     {
+
+        recyclerView =(RecyclerView)findViewById(R.id.rv);
+        recyclerView.setHasFixedSize(false);
+        layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL,false);
+
+        recyclerView.setLayoutManager(layoutManager);
+
         List<Anime> animes = new ArrayList<>();
         StringBuilder constructor = new StringBuilder();
         ListenableFuture<List<Anime>> animeFuture = db.animeDao().selectAll();
         try{
             animes = animeFuture.get();
-            for(int i = 0; i<animes.size(); i++)
-            {
-                Log.println(Log.ASSERT,"DB Select", animes.get(i).nombreAnime +" "+animes.get(i).genero + " "+ animes.get(i).autor);
-                constructor.append(animes.get(i).nombreAnime+"\n");
-
-            }
         }catch (Exception e)
         {
             Log.println(Log.ASSERT, "Error SELECT", e.toString());
         }
 
-        EditText etResult = (EditText)findViewById(R.id.etResult);
-        etResult.setText(constructor.toString());
+        myAdapter = new animeAdapter(animes);
+        recyclerView.setAdapter(myAdapter);
+
+
     }
 
     public void DeleteAnime(View view)
@@ -143,7 +156,7 @@ class animeAdapter extends RecyclerView.Adapter<animeAdapter.animeViewHolder>{
 
     @Override
     public animeAdapter.animeViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View item_anime = (View)LayoutInflater.from(parent.getContext()).inflate(R.layout.id.item_anime,parent,false);
+        View item_anime = (View)LayoutInflater.from(parent.getContext()).inflate(R.layout.item_anime  ,parent,false);
         animeViewHolder vh = new animeViewHolder(item_anime);
         return vh;
     }
@@ -163,7 +176,7 @@ class animeAdapter extends RecyclerView.Adapter<animeAdapter.animeViewHolder>{
         {
             @Override
             public void onClick(View view){
-                Log.println(Log.ASSERT,"Element Click", "Has seleccionado la serie: "+animeItem.nombreAnime)
+                Log.println(Log.ASSERT,"Element Click", "Has seleccionado la serie: "+animeItem.nombreAnime);
             }
         });
     }

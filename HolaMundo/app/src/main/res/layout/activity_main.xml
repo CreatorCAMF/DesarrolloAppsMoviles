@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/abMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/barra_menu"/>
+
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
@@ -21,13 +29,13 @@
         android:layout_width="161dp"
         android:layout_height="46dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="@string/value"
         android:inputType="textPersonName"
         android:onClick="calculateSum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/abMain" />
 
     <EditText
         android:id="@+id/etArg2"
@@ -65,7 +73,7 @@
         app:layout_constraintStart_toStartOf="@+id/tvResult"
         app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnClaveValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,6 +104,6 @@
         android:text="@string/db"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnArchivos"
-        app:layout_constraintStart_toEndOf="@+id/btnClaveValor" />
+        app:layout_constraintStart_toEndOf="@+id/btnClaveValor" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

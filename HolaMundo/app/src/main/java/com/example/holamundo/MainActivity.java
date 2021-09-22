@@ -1,9 +1,13 @@
+
 package com.example.holamundo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +19,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar abMain = (Toolbar) findViewById(R.id.abMain);
+        setSupportActionBar(abMain);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.barra_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.abbtnArchivos:
+                goToCrearArchivo();
+                return true;
+            case R.id.abbtnClaveValor:
+                goToClaveValor();
+                return true;
+            case R.id.abbtnDB:
+                goToDB();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     public void calculateSum(View view)
     {
@@ -39,19 +69,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToClaveValor(View view)
+    public void goToClaveValor()
     {
         Intent intent = new Intent(this, claveValor.class);
         startActivity(intent);
     }
 
-    public void goToCrearArchivo(View view)
+    public void goToCrearArchivo()
     {
         Intent intent = new Intent(this, crearArchivo.class);
         startActivity(intent);
     }
 
-    public void goToDB(View view)
+    public void goToDB()
     {
         Intent intent = new Intent(this, database.class);
         startActivity(intent);

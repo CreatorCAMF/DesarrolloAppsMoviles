@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.abbtnDB:
                 goToDB();
                 return true;
+            case R.id.abbtnRegistro:
+                goToRegistro();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -84,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
     public void goToDB()
     {
         Intent intent = new Intent(this, database.class);
+        startActivity(intent);
+    }
+
+    public void goToRegistro()
+    {
+        Intent intent = new Intent(this, auth.class);
         startActivity(intent);
     }
 

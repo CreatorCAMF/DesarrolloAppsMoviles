@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         fbAuth = FirebaseAuth.getInstance();
         fbDB = FirebaseDatabase.getInstance().getReference();
-        guardar();z
+        guardar();
     }
 
     public void borrar()

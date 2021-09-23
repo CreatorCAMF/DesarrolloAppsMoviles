@@ -17,5 +17,8 @@
     <item android:id="@+id/abbtnArchivos"
         android:title="@string/archivos"
         app:showAsAction="never"/>
+    <item android:id="@+id/abbtnRegistro"
+        android:title="@string/login"
+        app:showAsAction="never"/>
 
 </menu>

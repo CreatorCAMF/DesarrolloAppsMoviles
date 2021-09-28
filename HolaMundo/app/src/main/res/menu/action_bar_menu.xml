@@ -20,5 +20,8 @@
     <item android:id="@+id/abbtnRegistro"
         android:title="@string/login"
         app:showAsAction="never"/>
+    <item android:id="@+id/abbtnRequest"
+        android:title="@string/request"
+        app:showAsAction="never"/>
 
 </menu>

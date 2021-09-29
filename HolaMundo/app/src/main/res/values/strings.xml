@@ -15,6 +15,9 @@
     <string name="login">Entrar</string>
     <string name="request">Request</string>
 
+    <string name="take">Capturar</string>
+
+
     <string name="value">Escribe un numero</string>
     <string name="title_activity_maps">MapsActivity</string>
 </resources>

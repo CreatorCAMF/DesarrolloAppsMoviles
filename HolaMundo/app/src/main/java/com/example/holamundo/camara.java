@@ -1,10 +1,12 @@
 package com.example.holamundo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -12,6 +14,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -19,6 +23,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -31,6 +44,9 @@ public class camara extends AppCompatActivity {
 
     private Bitmap IMGBMP = null;
 
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +55,8 @@ public class camara extends AppCompatActivity {
         {
             Log.println(Log.ASSERT, "OK", "Permisos ok");
         }
+
+
     }
 
     public boolean tengoPermisos()
@@ -146,12 +164,95 @@ public class camara extends AppCompatActivity {
             long id =cursor.getLong(columnaId);
             String name = cursor.getString(colmnaName);
             Uri uri = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,id);
+
             fotito foti = new fotito(uri,name);
             fotitos.add(foti);
             Log.println(Log.ASSERT,"OK", foti.toString());
         }
 
     }
+
+    public void Listar(View view)
+    {
+        StorageReference listaArchivos = storage.getReference();
+        listaArchivos.listAll()
+                .addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+                        for(StorageReference prefijo : listResult.getPrefixes()){
+                            Log.println(Log.ASSERT,"DIRECTORIO", prefijo.toString());
+                        }
+                        for(StorageReference item: listResult.getItems()){
+                            Log.println(Log.ASSERT,"ARCHIVO", item.toString());
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.println(Log.ASSERT,"NOK", e.toString());
+                    }
+                });
+    }
+
+    public void Cargar(View view)
+    {
+        StorageReference listaArchivos = storage.getReference();
+        StorageReference imgCarga = listaArchivos.child("miImagenCargada.png");
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        IMGBMP.compress(Bitmap.CompressFormat.PNG,100,baos);
+        byte[] data = baos.toByteArray();
+        UploadTask carga = imgCarga.putBytes(data);
+        carga.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Log.println(Log.ASSERT,"OK", "Cargado ...");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.println(Log.ASSERT,"NOK", e.toString());
+            }
+        });
+    }
+
+    public void Descargar(View view)
+    {
+        StorageReference listaArchivos = storage.getReference();
+        StorageReference imagenDescarga = listaArchivos.child("a.png");
+        long MEGA = 1024*1024;
+        imagenDescarga.getBytes(MEGA).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bitsImagenDescargada = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                ImageView imgSelfie = (ImageView) findViewById(R.id.imgSelfie);
+                imgSelfie.setImageBitmap(bitsImagenDescargada);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.println(Log.ASSERT,"NOK", e.toString());
+            }
+        });
+    }
+
+    public void Eliminar(View view){
+        StorageReference listaArchivos = storage.getReference();
+        StorageReference imgSaraConnor = listaArchivos.child("miImagenCargada.png");
+
+        imgSaraConnor.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.println(Log.ASSERT,"TERMINATOR", "Hasta la vista baby");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.println(Log.ASSERT,"NOK", e.toString());
+            }
+        });
+    }
+
 
 
 

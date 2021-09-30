@@ -42,7 +42,45 @@
         android:layout_marginTop="50dp"
         android:onClick="searchSelfie"
         android:text="@string/delete"
-        app:layout_constraintEnd_toEndOf="@+id/imgSelfie"
         app:layout_constraintStart_toStartOf="@+id/imgSelfie"
         app:layout_constraintTop_toBottomOf="@+id/btnSaveSelfie" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Listar"
+        android:text="Listar"
+        app:layout_constraintEnd_toEndOf="@+id/imgSelfie"
+        app:layout_constraintTop_toTopOf="@+id/btnSearchSelfie" />
+
+    <Button
+        android:id="@+id/btnDescargar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="Descargar"
+        android:text="Descargar"
+        app:layout_constraintStart_toStartOf="@+id/imgSelfie"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearchSelfie" />
+
+    <Button
+        android:id="@+id/btnCargar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Cargar"
+        android:text="Cargar"
+        app:layout_constraintEnd_toEndOf="@+id/imgSelfie"
+        app:layout_constraintTop_toTopOf="@+id/btnDescargar" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="Eliminar"
+        android:text="Eliminar"
+        app:layout_constraintEnd_toEndOf="@+id/imgSelfie"
+        app:layout_constraintStart_toStartOf="@+id/imgSelfie"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

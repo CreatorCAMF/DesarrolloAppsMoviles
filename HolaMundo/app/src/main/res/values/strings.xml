@@ -17,6 +17,9 @@
 
     <string name="take">Capturar</string>
 
+    <string name="notificacion">Notificacion</string>
+    <string name="servicio">Servicio</string>
+
 
     <string name="value">Escribe un numero</string>
     <string name="title_activity_maps">MapsActivity</string>

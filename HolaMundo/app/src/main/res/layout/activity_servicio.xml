@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".servicio">
+
+    <Button
+        android:id="@+id/btnNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="notificame"
+        android:text="@string/notificacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnServicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="Servicio"
+        android:text="@string/servicio"
+        app:layout_constraintEnd_toEndOf="@+id/btnNotification"
+        app:layout_constraintStart_toStartOf="@+id/btnNotification"
+        app:layout_constraintTop_toBottomOf="@+id/btnNotification" />
+
+    <Button
+        android:id="@+id/btnServicio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="Servicio2"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/btnServicio"
+        app:layout_constraintStart_toStartOf="@+id/btnServicio"
+        app:layout_constraintTop_toBottomOf="@+id/btnServicio" />
+</androidx.constraintlayout.widget.ConstraintLayout>

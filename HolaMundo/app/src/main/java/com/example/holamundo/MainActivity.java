@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.abbtnMedia:
                 goToCamara();
                 return true;
+            case R.id.abbtnService:
+                goToService();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -111,6 +114,12 @@ public class MainActivity extends AppCompatActivity {
     public void goToCamara()
     {
         Intent intent = new Intent(this, camara.class);
+        startActivity(intent);
+    }
+
+    public void goToService()
+    {
+        Intent intent = new Intent(this, servicio.class);
         startActivity(intent);
     }
 

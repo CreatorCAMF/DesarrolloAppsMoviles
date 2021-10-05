@@ -26,5 +26,8 @@
     <item android:id="@+id/abbtnMedia"
         android:title="Camara"
         app:showAsAction="never"/>
+    <item android:id="@+id/abbtnService"
+        android:title="Servicio"
+        app:showAsAction="never"/>
 
 </menu>

@@ -34,7 +34,6 @@ public class Servicio extends Service {
     private final class ServiceHandler extends Handler {
         public ServiceHandler(Looper looper) {
             super(looper);
-
         }
         @Override
         public void handleMessage(Message msg) {
@@ -64,9 +63,6 @@ public class Servicio extends Service {
         Message msg = serviceHandler.obtainMessage();
         msg.arg1 = startId;
         serviceHandler.sendMessage(msg);
-
-
-
         return START_STICKY;
     }
 
@@ -81,7 +77,7 @@ public class Servicio extends Service {
     }
 
 
-    public void notificacionToast()
+    public void notifzficacionToast()
     {
         try {
             Intent notificationIntent = new Intent(context, Servicio.class);

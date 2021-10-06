@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.holamundo">
+    package="com.creatorcamf.holamundo"
+    android:versionCode="1"
+    android:versionName="HolaMundo">
 
     <uses-feature
         android:name="android.hardware.camera"

@@ -76,26 +76,26 @@ public class servicioBackground extends Service {
             int MAX = 10;
             int MIN = 0;
             Log.println(Log.ASSERT, "ok", "Inicia ");
-            /*Notification.Builder bob = new Notification.Builder(context, "CID")
+            Notification.Builder bob = new Notification.Builder(context, "CP")
                     .setContentText("Descargando")
                     .setContentTitle("Descarga")
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setProgress(MAX,MIN,false);
             Notification anuncioStatus = bob.build();
-            startForeground(100,anuncioStatus);*/
-            while(MIN<= MAX)
+            startForeground(100,anuncioStatus);
+            while(MIN< MAX)
             {
                 Thread.sleep(1000);
                 MIN = MIN+1;
-                /*bob.setProgress(MAX,MIN,false);
+                bob.setProgress(MAX,MIN,false);
                 anuncioStatus = bob.build();
-                startForeground(100,anuncioStatus)*/
+                startForeground(100,anuncioStatus);
                 Log.println(Log.ASSERT, "ok", "Corriendo " + MIN);
             }
 
-            /*bob.setProgress(0,0, false);
+            bob.setProgress(0,0, false);
             anuncioStatus =bob.setContentTitle("Descarga terminada").build();
-            startForeground(100, anuncioStatus);*/
+            startForeground(100, anuncioStatus);
             Thread.sleep(1000);
             Log.println(Log.ASSERT, "ok", "Finaliza ");
         }catch (Exception e)

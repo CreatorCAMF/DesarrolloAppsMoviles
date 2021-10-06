@@ -22,7 +22,7 @@ public class servicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        crearCanal();
+        createNotificationChannel();
         context= this;
         setContentView(R.layout.activity_servicio);
     }
@@ -34,7 +34,7 @@ public class servicio extends AppCompatActivity {
         PendingIntent intentPendiente = PendingIntent.getActivity(this,0,intent,0);
         Log.println(Log.ASSERT,"OK", "Notificacion");
         NotificationCompat.Builder constructor = new NotificationCompat.Builder(this, "CP").
-                setSmallIcon(R.drawable.ic_launcher_background).
+                setSmallIcon(R.drawable.full_metal).
                 setContentTitle("Notificación del canal").
                 setContentText("Del atlantico al pacifico").
                 setPriority(NotificationCompat.PRIORITY_DEFAULT).
@@ -58,7 +58,7 @@ public class servicio extends AppCompatActivity {
         startService(intent);
     }
 
-    public void crearCanal()
+    public void createNotificationChannel()
     {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
